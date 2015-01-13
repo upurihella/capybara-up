@@ -1,0 +1,40 @@
+
+When(/^I click the "(.*?)" tab$/) do |arg1|
+  click_link(arg1)
+end
+
+Then(/^I should see the Dominos Location Search page$/) do
+  expect(page).to have selector(id, 'locationsSearchPage')
+end
+
+#Then(/^I should select "(.*?)" radio button$/) do |AddressType|
+#   select('House', :from => 'Address type:')
+#end
+
+Then(/^I should fill_in address$/) do
+    fill in ('Street', :with => "2531 Swift Run Street"
+    fill in ('City', :with => "Vienna"
+    select('VA', :from => 'State:')
+    fill in ('Zip Code:', :with => "22180" 
+    find('.' +'Continue').click
+end
+
+Then(/^I should see the Dominos Location Results page$/) do
+  expect(page).to have selector(id, 'locationResultsPage')
+end
+
+when(/^I click the order link$/) do
+  click_link('Future Delivery Order', :match => :first)
+end
+
+Then(/^I should see the Dominos Entrees page$/) do
+  expect(page).to have selector(id, 'entreesPage')
+end
+
+#Then(/^I should order multiple pizzas$/) do
+#  
+#end
+
+#Then(/^I should checkout$/) do
+#  pending # express the regexp above with the code you wish you had
+#end

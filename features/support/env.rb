@@ -5,4 +5,4 @@ require "timeout"
 
 # using the selenium driver as default so that we can pull up Firefox
 
-capybara.default_driver = :selenium 
+Capybara.default_driver = :selenium 
